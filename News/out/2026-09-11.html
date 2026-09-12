@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>시황 브리핑 2026-09-11</title>
+
+<style>
+  @font-face {
+    font-family: "KoPubWorld Dotum";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local("KoPubWorld Dotum Medium"),
+         local("KoPubWorld돋움체 Medium"),
+         local("KoPubWorldDotum-Medium"),
+         url("../Setting/KoPubWorld_Dotum_Medium.ttf") format("truetype"),
+         url("https://cdn.jsdelivr.net/npm/font-kopubworld@1.0.3/fonts/KoPubWorld-Dotum-Medium.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "KoPubWorld Dotum";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: local("KoPubWorld Dotum Bold"),
+         local("KoPubWorld돋움체 Bold"),
+         local("KoPubWorldDotum-Bold"),
+         url("https://cdn.jsdelivr.net/npm/font-kopubworld@1.0.3/fonts/KoPubWorld-Dotum-Bold.woff2") format("woff2");
+  }
+
+  :root {
+    --bg:         #f7f8f8;
+    --surface:    #fdfdfd;
+    --text:       #16191b;
+    --text-dim:   #5c6469;
+    --text-faint: #6f767c;
+    --rule:       #d8dde0;
+    --rule-soft:  #e9ecee;
+    --accent:     #1f6b4d;
+    --up:         #cc2f26;
+    --down:       #1156b8;
+    --flat:       #7c848a;
+    --font: "KoPubWorld Dotum", "KoPub Dotum", "KoPubDotum",
+            -apple-system, BlinkMacSystemFont, "Segoe UI",
+            "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+    --col: 68ch;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141719; --surface: #1b1f21; --text: #e8ebec;
+      --text-dim: #a0a8ad; --text-faint: #858d93;
+      --rule: #2e3437; --rule-soft: #23282a;
+      --accent: #4fae83; --up: #f0685c; --down: #5f9cf0; --flat: #858d93;
+    }
+  }
+
+  * { box-sizing: border-box; border-radius: 0; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text); font-family: var(--font);
+    font-size: 16px; line-height: 1.72; word-break: keep-all; overflow-wrap: break-word;
+    -webkit-font-smoothing: antialiased;
+  }
+  .sheet { max-width: 780px; margin: 0 auto; padding: 44px 26px 80px; }
+
+  .nameplate { font-size: 13px; color: var(--text-dim); margin: 0 0 20px; }
+  .nameplate b { color: var(--accent); font-weight: 700; }
+  .masthead { border-top: 2px solid var(--text); padding-top: 20px; }
+  .masthead h1 { font-size: 32px; font-weight: 700; line-height: 1.32; letter-spacing: -.018em; margin: 0; max-width: 22ch; }
+  .masthead .day { font-size: 15px; color: var(--text-dim); margin: 12px 0 0; }
+  .basis {
+    display: grid; grid-template-columns: max-content 1fr; gap: 3px 18px; font-size: 13px;
+    margin: 22px 0 46px; padding-top: 16px; border-top: 1px solid var(--rule-soft);
+  }
+  .basis dt { color: var(--text-faint); }
+  .basis dd { margin: 0; color: var(--text-dim); }
+
+  section { margin: 0 0 52px; }
+  h2 { font-size: 20px; font-weight: 700; letter-spacing: -.012em; margin: 0 0 18px; padding-bottom: 10px; border-bottom: 1px solid var(--rule); }
+  p { margin: 0 0 15px; }
+  p:last-child { margin-bottom: 0; }
+  a { color: var(--accent); text-decoration: none; border-bottom: 1px solid color-mix(in srgb, var(--accent) 35%, transparent); transition: border-color .15s ease; }
+  a:hover, a:focus-visible { border-bottom-color: var(--accent); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  .n { font-variant-numeric: tabular-nums; letter-spacing: -.01em; }
+  .up { color: var(--up); } .down { color: var(--down); } .flat { color: var(--flat); } .na { color: var(--text-faint); }
+  .src-note { font-size: 12.5px; color: var(--text-faint); line-height: 1.65; margin: 20px 0 0; padding-top: 12px; border-top: 1px solid var(--rule-soft); max-width: var(--col); }
+
+  .lede { border-left: 3px solid var(--accent); padding: 2px 0 2px 20px; margin: 0 0 40px; }
+  .lede .line { font-size: 21px; font-weight: 700; line-height: 1.55; letter-spacing: -.015em; margin: 0; max-width: 34ch; }
+  .lede .note { font-size: 15px; color: var(--text-dim); margin: 12px 0 0; max-width: var(--col); }
+
+  .gauges { display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px 34px; }
+  .gauge { border-left: 3px solid var(--rule); padding-left: 16px; }
+  .gauge .axis { font-size: 13px; color: var(--text-faint); margin: 0 0 4px; }
+  .gauge .state { font-size: 18px; font-weight: 700; margin: 0 0 6px; letter-spacing: -.01em; }
+  .gauge .why { font-size: 14px; color: var(--text-dim); line-height: 1.6; margin: 0; }
+  .gauge .prev { font-size: 12.5px; color: var(--text-faint); margin: 6px 0 0; }
+  .gauge.up   { border-left-color: var(--up); }
+  .gauge.down { border-left-color: var(--down); }
+  .gauge.flat { border-left-color: var(--flat); }
+  .gauge.up .state   { color: var(--up); }
+  .gauge.down .state { color: var(--down); }
+  .gauge.flat .state { color: var(--flat); }
+
+  .block { margin-top: 30px; }
+  .block:first-of-type { margin-top: 0; }
+  .block > h3 { font-size: 14px; font-weight: 700; color: var(--text-dim); margin: 0 0 8px; }
+  table { width: 100%; max-width: 600px; border-collapse: collapse; font-size: 15px; }
+  .block.wide table { max-width: 740px; }
+  thead th { font-size: 12.5px; font-weight: 400; color: var(--text-faint); text-align: right; padding: 0 10px 7px; border-bottom: 1px solid var(--rule); }
+  thead th:first-child { text-align: left; }
+  tbody td { padding: 9px 10px; text-align: right; border: 0; }
+  tbody td:first-child { text-align: left; color: var(--text-dim); }
+  tbody tr:first-child td { padding-top: 12px; }
+  .t, thead th.t { text-align: left; }
+  .key { color: var(--text) !important; font-weight: 700; }
+
+  .read p { max-width: var(--col); font-size: 16.5px; line-height: 1.85; margin-bottom: 24px; }
+  .read p b { font-weight: 700; color: var(--text); }
+
+  .sparks { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px 22px; margin: 0 0 28px; }
+  .spark { border-left: 1px solid var(--rule); padding-left: 14px; }
+  .spark .label { font-size: 12.5px; color: var(--text-faint); margin: 0 0 8px; line-height: 1.4; }
+  .spark svg { display: block; width: 100%; height: 36px; overflow: visible; }
+  .spark polyline { fill: none; stroke-width: 1.75; stroke-linejoin: round; stroke-linecap: round; }
+  .spark circle { stroke: var(--bg); stroke-width: 1.25; }
+  .spark svg.up polyline   { stroke: var(--up); }
+  .spark svg.down polyline { stroke: var(--down); }
+  .spark svg.flat polyline { stroke: var(--flat); }
+  .spark svg.up circle     { fill: var(--up); }
+  .spark svg.down circle   { fill: var(--down); }
+  .spark svg.flat circle   { fill: var(--flat); }
+  .spark .days { display: flex; justify-content: space-between; font-size: 11px; color: var(--text-faint); margin: 5px 0 0; padding: 0 1px; }
+  .spark .days span:last-child { color: var(--text); font-weight: 700; }
+  .spark .range { display: flex; justify-content: space-between; font-size: 12px; color: var(--text-faint); margin: 3px 0 0; }
+
+  .week { list-style: none; margin: 0; padding: 0; }
+  .week li { display: grid; grid-template-columns: 84px 1fr max-content; gap: 0 14px; padding: 10px 0; font-size: 15px; align-items: baseline; }
+  .week li + li { border-top: 1px solid var(--rule-soft); }
+  .week .day { color: var(--text-faint); font-size: 13.5px; font-variant-numeric: tabular-nums; }
+  .week .what { color: var(--text-dim); }
+  .week .chg { font-size: 14px; text-align: right; }
+  .week li.today .day, .week li.today .what { color: var(--text); font-weight: 700; }
+
+  .news { list-style: none; margin: 0; padding: 0; counter-reset: n; }
+  .news li { counter-increment: n; display: grid; grid-template-columns: 26px 1fr; gap: 0 12px; padding: 0 0 24px; }
+  .news li:last-child { padding-bottom: 0; }
+  .news li::before { content: counter(n, decimal-leading-zero); font-size: 13px; color: var(--text-faint); font-variant-numeric: tabular-nums; padding-top: 4px; }
+  .news .head { font-size: 16.5px; font-weight: 700; line-height: 1.5; letter-spacing: -.01em; margin: 0; }
+  .news .why { font-size: 14.5px; color: var(--text-dim); line-height: 1.65; margin: 5px 0 0; max-width: var(--col); }
+  .news .from { font-size: 12.5px; color: var(--text-faint); margin: 6px 0 0; }
+
+  .cal { list-style: none; margin: 0; padding: 0; }
+  .cal li { display: grid; grid-template-columns: 132px 1fr max-content; gap: 0 14px; padding: 10px 0; font-size: 15px; align-items: baseline; }
+  .cal li + li { border-top: 1px solid var(--rule-soft); }
+  .cal .when { color: var(--text-faint); font-size: 13.5px; font-variant-numeric: tabular-nums; }
+  .cal .est { color: var(--text-dim); font-size: 14px; font-variant-numeric: tabular-nums; text-align: right; }
+  .cal li.mark .when, .cal li.mark span { color: var(--text); font-weight: 700; }
+
+  footer { margin-top: 64px; padding-top: 22px; border-top: 2px solid var(--text); font-size: 13px; color: var(--text-faint); line-height: 1.75; }
+  footer h3 { font-size: 13.5px; font-weight: 700; color: var(--text-dim); margin: 0 0 6px; }
+  footer .blk { margin-bottom: 22px; }
+  footer ul { margin: 0; padding-left: 17px; }
+  footer li { margin-bottom: 3px; }
+  .gap { color: var(--up); }
+  .fineprint { border-top: 1px solid var(--rule-soft); padding-top: 14px; font-size: 12px; max-width: var(--col); }
+
+  @media (max-width: 620px) {
+    .sheet { padding: 32px 18px 60px; }
+    .masthead h1 { font-size: 25px; }
+    .lede .line { font-size: 18.5px; }
+    .sparks { grid-template-columns: repeat(2, 1fr); gap: 16px 14px; }
+    .gauges { grid-template-columns: 1fr; gap: 20px; }
+    .week li, .cal li { grid-template-columns: 1fr; gap: 2px; }
+    .week .chg, .cal .est { text-align: left; }
+    table { font-size: 14px; }
+    tbody td, thead th { padding-left: 4px; padding-right: 4px; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+  @media print {
+    :root { --bg: #fff; --surface: #fff; --text: #000; --text-dim: #333; --text-faint: #555; --rule: #999; --rule-soft: #ccc; }
+    .sheet { max-width: none; padding: 0; }
+    section { break-inside: avoid; margin-bottom: 28px; }
+    .news li, .gauge, .spark { break-inside: avoid; }
+    a { border-bottom: 0; }
+  }
+</style>
+</head>
+
+<body>
+<div class="sheet">
+
+  <p class="nameplate"><b>시황 브리핑</b></p>
+
+  <header class="masthead">
+    <h1>연준 인상 확률 90%, 코스피 7,000선 반납</h1>
+    <p class="day">2026년 9월 11일 금요일</p>
+  </header>
+
+  <dl class="basis">
+    <dt>국내 기준</dt><dd>2026-09-11 종가</dd>
+    <dt>아시아 기준</dt><dd>2026-09-11 종가</dd>
+    <dt>미국 기준</dt><dd>2026-09-11 종가. 한국시간 9월 12일 새벽 마감</dd>
+    <dt>원자재 기준</dt><dd>2026-09-11 미국 정산가</dd>
+    <dt>작성 시각</dt><dd>2026-09-12 토요일 저녁. 전일자 정리</dd>
+  </dl>
+
+  <div class="lede">
+    <p class="line">연준 인상이 기정사실이 된 날, 뉴욕은 반등했고 서울은 밀렸다.</p>
+    <p class="note">8월 근원 소비자물가가 예상을 웃돌자 9월 인상 확률이 90%로 뛰었다. 그런데 뉴욕은 유가가 2%대 후퇴하고 AI 인프라주가 오르면서 나흘 연속 하락을 끊었다. 그 밤이 오기 전에 마감한 코스피는 전날 뉴욕의 하락과 유가 100달러를 반영해 1.76% 내려 7,000선을 반납했다. 서울과 뉴욕이 서로 다른 재료를 보고 움직인 하루다.</p>
+  </div>
+
+  <section>
+    <h2>경제 온도계</h2>
+    <div class="gauges">
+      <div class="gauge up">
+        <p class="axis">금리</p>
+        <p class="state">긴축</p>
+        <p class="why">연준 9월 인상 확률 90%. 미 2년물 이틀간 21.7bp 상승. 국고채 3년물 4% 돌파. ECB는 이미 올렸다.</p>
+        <p class="prev">어제: 긴축 쪽으로</p>
+      </div>
+      <div class="gauge up">
+        <p class="axis">물가</p>
+        <p class="state">상승 압력</p>
+        <p class="why">미 근원 CPI 예상 상회, 일본 PPI 7.6%. 유가가 하루 후퇴했으나 WTI는 여전히 100달러.</p>
+        <p class="prev">어제: 상승 압력</p>
+      </div>
+      <div class="gauge up">
+        <p class="axis">성장</p>
+        <p class="state">확장</p>
+        <p class="why">지표는 여전히 견조하다. 다만 금리와 유가가 기업 마진과 소비를 누르기 시작했다는 해석이 이어진다.</p>
+        <p class="prev">어제: 확장</p>
+      </div>
+      <div class="gauge down">
+        <p class="axis">위험 선호</p>
+        <p class="state">회피</p>
+        <p class="why">아시아 전 시장 하락, 외국인 국내 2.5조 순매도. 뉴욕이 하루 반등했지만 주간으로는 하락.</p>
+        <p class="prev">어제: 회피</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>지표</h2>
+
+    <div class="block">
+      <h3>국내</h3>
+      <table>
+        <thead>
+          <tr><th>지수</th><th>종가</th><th>전일 대비</th><th>등락률</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="key">코스피</td><td class="n">6,909.91</td><td class="n down">-124.01</td><td class="n down">-1.76%</td></tr>
+          <tr><td class="key">코스닥</td><td class="n">820.64</td><td class="n down">-16.28</td><td class="n down">-1.95%</td></tr>
+        </tbody>
+      </table>
+      <p class="src-note">코스피는 6,802.50에 출발해 장중 6,800선 초반까지 밀렸다가 100포인트 넘게 회복해 마감했다. 종가 기준 7,000선 아래는 9월 8일 이후 사흘 만이다. 업종별로는 전기전자 2.66%, 제조 2.21%, 의료정밀 2.18% 하락. 건설 1.90%, 보험 1.56%는 올랐다. 삼성전자 3.53% 하락한 259,500원, SK하이닉스 2.21% 하락한 1,812,000원.</p>
+    </div>
+
+    <div class="block wide">
+      <h3>투자자별 순매수 (마감 기준)</h3>
+      <table>
+        <thead>
+          <tr><th>주체</th><th>코스피</th><th>코스닥</th><th class="t">비고</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="key">외국인</td><td class="n down">-2조 4,587억 원</td><td class="n down">-3,585억 원</td><td class="t">이틀 연속 2조 원대 순매도</td></tr>
+          <tr><td class="key">기관</td><td class="n down">-1조 6,443억 원</td><td class="n down">-2,267억 원</td><td class="t">어제 매수에서 매도로 전환</td></tr>
+          <tr><td class="key">개인</td><td class="n up">+2조 4,259억 원</td><td class="n up">+5,710억 원</td><td class="t">양 시장 모두 받아냄</td></tr>
+        </tbody>
+      </table>
+      <p class="src-note">파이낸셜뉴스 집계. 한국면세뉴스는 코스피 외국인을 2조 3,040억 원 순매도로 적어 1,500억 원가량 차이가 있다. 잠정 집계 시점 차이로 보인다.</p>
+    </div>
+
+    <div class="block">
+      <h3>미국 (9월 11일 종가)</h3>
+      <table>
+        <thead>
+          <tr><th>지수</th><th>종가</th><th>등락률</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="key">S&amp;P 500</td><td class="n">7,656.98</td><td class="n up">+0.86%</td></tr>
+          <tr><td class="key">나스닥 종합</td><td class="n">26,333.04</td><td class="n up">+0.96%</td></tr>
+          <tr><td class="key">VIX</td><td class="n">15.84</td><td class="n down">-11.21%</td></tr>
+        </tbody>
+      </table>
+      <p class="src-note">이 장은 국내장이 끝난 뒤에 열렸다. 나흘 연속 하락을 끊은 반등이지만 주간으로는 3대 지수 모두 내렸고 다우존스는 3월 이후 가장 나쁜 주였다. 다우존스는 52,573.29로 0.98% 상승. 변동성지수는 9월 4일 이후 처음 내렸다.</p>
+    </div>
+
+    <div class="block">
+      <h3>아시아 (당일)</h3>
+      <table>
+        <thead>
+          <tr><th>지수</th><th>종가</th><th>등락률</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="key">닛케이 225</td><td class="n">64,011.34</td><td class="n down">-1.93%</td></tr>
+          <tr><td class="key">상해종합</td><td class="n">3,888.11</td><td class="n down">-1.18%</td></tr>
+          <tr><td class="key">항셍</td><td class="n">24,805.63</td><td class="n down">-0.60%</td></tr>
+          <tr><td class="key">대만 가권</td><td class="n">46,184.85</td><td class="n down">-1.61%</td></tr>
+        </tbody>
+      </table>
+      <p class="src-note">네 시장 모두 내렸다. 한국 일본 대만처럼 반도체 비중이 큰 곳이 더 크게 빠졌다. 아시아는 미국의 반등을 보기 전에 마감했다.</p>
+    </div>
+
+    <div class="block">
+      <h3>매크로</h3>
+      <table>
+        <thead>
+          <tr><th>항목</th><th>종가</th><th>전일 대비</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="key">원/달러</td><td class="n">1,345.9</td><td class="n up">+6.7</td></tr>
+          <tr><td class="key">달러인덱스</td><td class="n">99.12</td><td class="n up">+0.05</td></tr>
+          <tr><td class="key">국고채 3년물</td><td class="n">4.023%</td><td class="n up">+0.091%p</td></tr>
+          <tr><td class="key">미 국채 10년물</td><td class="n">4.975%</td><td class="n up">+0.031%p</td></tr>
+          <tr><td class="key">미 국채 2년물</td><td class="n">4.644%</td><td class="n up">+0.094%p</td></tr>
+          <tr><td class="key">WTI</td><td class="n">100.05</td><td class="n down">-2.4%</td></tr>
+          <tr><td class="key">금</td><td class="n">4,385.61</td><td class="n up">+0.06%</td></tr>
+        </tbody>
+      </table>
+      <p class="src-note">원/달러는 국내 주간 거래 종가. 금리 세 종은 Investing.com 9월 11일 종가이며 전일 대비는 같은 출처의 9월 10일 종가와 비교했다. 국고채 3년물이 4%를 넘은 것은 이 문서를 시작한 이래 처음이다. WTI와 브렌트유는 미국 정산가이고 브렌트유는 104.61달러로 2.8% 내렸다. 금은 USAGOLD 일간 리포트의 현물 기준.</p>
+    </div>
+  </section>
+
+  <section class="read">
+    <h2>흐름 읽기</h2>
+
+    <p><b>뉴욕은 나흘 만에 반등했지만, 연준 인상은 굳어졌다.</b> 8월 근원 소비자물가가 0.3%로 예상치 0.2%를 웃돌자 9월 인상 확률은 90%로 올랐다. 블룸버그는 채권 시장이 연내 두 번 인상을 반영하기 시작했다고 전했다. 그런데도 S&amp;P 500이 0.86% 오른 것은 유가가 2%대 후퇴하고 AI 인프라주가 급등한 덕으로 보도됐다. 채권은 다르게 봐서, 2년물이 이틀 만에 21.7bp 올라 4.644%가 됐고 장단기 금리차는 33bp까지 좁혀졌다. 주간으로는 3대 지수 모두 내렸고, 결정은 한국시간 17일 새벽에 나온다.</p>
+
+    <p><b>아시아는 뉴욕의 반등을 보지 못한 채 마감했다.</b> 닛케이가 1.93%, 대만이 1.61%, 상해가 1.18% 내렸다. 일본 8월 생산자물가가 7.6%로 예상을 웃돌아 일본은행 인상 기대를 키운 것도 한몫했다. 반도체 비중이 큰 한국 일본 대만이 더 크게 밀렸는데, 전날 뉴욕 기술주 급락의 여파다. 국내 금리도 따라갔다. 국고채 3년물이 9.1bp 올라 4%를 넘었고 원/달러는 6.7원 오른 1,345.9원으로 이틀째 약세였다.</p>
+
+    <p><b>코스피는 1.76% 내려 사흘 만에 7,000선을 내줬다.</b> 6,802에 출발해 장중 6,800선 초반까지 밀렸다가 마감 전 100포인트 넘게 회복했다. 국내 매체들은 미 금리 상승, 유가 불안, 뉴욕 기술주 급락을 삼중고로 꼽았다. 코스닥은 1.95% 내려 낙폭이 더 컸다. 국내가 마감한 뒤에 뉴욕이 반등했다. 서울은 뉴욕의 목요일을 보고 팔았고, 뉴욕은 금요일에 그 걱정을 일부 거둬들인 셈이다.</p>
+
+    <p><b>반도체가 지수를 끌어내렸고 건설과 보험이 버텼다.</b> 삼성전자가 3.53% 내린 259,500원, SK하이닉스가 2.21% 내린 1,812,000원으로 마감했다. 업종별로는 전기전자가 2.66%로 가장 크게 빠졌고 제조와 의료정밀이 2%대 하락으로 뒤를 이었다. 반면 건설이 1.90%, 보험이 1.56% 올랐다. 뉴욕은 반대로, 델과 HPE 같은 AI 인프라주가 10% 안팎 뛰며 나스닥 반등을 이끌었다. 국내 반도체와 미국 AI 인프라가 같은 날 반대로 간 것이 오늘의 대비다.</p>
+
+    <p><b>외국인과 기관이 팔고 개인이 받았다.</b> 코스피에서 외국인이 2조 4,587억 원, 기관이 1조 6,443억 원을 순매도했고 개인이 2조 4,259억 원을 순매수했다. 외국인은 이틀 연속 2조 원대를 팔았고 기관은 매수에서 매도로 돌아섰다. 9월 초의 외국인 매수 전환은 되돌려졌다고 봐야 한다. 이번 주는 4일 고용 서프라이즈에서 시작해 8일 유가, 9일 금리, 10일 ECB, 11일 물가로 이어지며 연준 인상이 63%에서 90%로 굳어진 주였다. 다음 주는 화요일 한국 수출입과 중국 산업생산에서 시작해 수요일 밤 연준으로 간다.</p>
+  </section>
+
+  <section>
+    <h2>이번 주</h2>
+
+    <div class="sparks">
+      <div class="spark">
+        <p class="label">코스피</p>
+        <svg class="down" viewBox="0 0 120 36" aria-label="코스피 이번 주 궤적. 9일 고점 뒤 이틀 하락">
+          <polyline points="0,23.2 40,4 80,7.5 120,32"/>
+          <circle cx="0" cy="23.2" r="2.5"/><circle cx="40" cy="4" r="2.5"/><circle cx="80" cy="7.5" r="2.5"/><circle cx="120" cy="32" r="3.5"/>
+        </svg>
+        <p class="days"><span>화</span><span>수</span><span>목</span><span>금</span></p>
+        <p class="range n"><span>6,954.52</span><span>6,909.91</span></p>
+      </div>
+      <div class="spark">
+        <p class="label">미 국채 2년물</p>
+        <svg class="up" viewBox="0 0 120 36" aria-label="미 국채 2년물 이번 주 궤적. 계단식 상승">
+          <polyline points="0,32 40,28.7 80,14.7 120,4"/>
+          <circle cx="0" cy="32" r="2.5"/><circle cx="40" cy="28.7" r="2.5"/><circle cx="80" cy="14.7" r="2.5"/><circle cx="120" cy="4" r="3.5"/>
+        </svg>
+        <p class="days"><span>화</span><span>수</span><span>목</span><span>금</span></p>
+        <p class="range n"><span>4.398%</span><span>4.644%</span></p>
+      </div>
+      <div class="spark">
+        <p class="label">WTI</p>
+        <svg class="up" viewBox="0 0 120 36" aria-label="WTI 이번 주 궤적. 10일 고점 뒤 후퇴">
+          <polyline points="0,32 40,18.6 80,4 120,10.7"/>
+          <circle cx="0" cy="32" r="2.5"/><circle cx="40" cy="18.6" r="2.5"/><circle cx="80" cy="4" r="2.5"/><circle cx="120" cy="10.7" r="3.5"/>
+        </svg>
+        <p class="days"><span>화</span><span>수</span><span>목</span><span>금</span></p>
+        <p class="range n"><span>92.37</span><span>100.05</span></p>
+      </div>
+      <div class="spark">
+        <p class="label">VIX</p>
+        <svg class="up" viewBox="0 0 120 36" aria-label="VIX 이번 주 궤적. 사흘 오르다 금요일 급락">
+          <polyline points="0,32 40,22.2 80,4 120,30.4"/>
+          <circle cx="0" cy="32" r="2.5"/><circle cx="40" cy="22.2" r="2.5"/><circle cx="80" cy="4" r="2.5"/><circle cx="120" cy="30.4" r="3.5"/>
+        </svg>
+        <p class="days"><span>화</span><span>수</span><span>목</span><span>금</span></p>
+        <p class="range n"><span>15.72</span><span>15.84</span></p>
+      </div>
+    </div>
+
+    <ul class="week">
+      <li><span class="day">9/8 (화)</span><span class="what">사우디 피격과 캐나다 관세에 반도체 랠리 반전. 뉴욕도 같은 이유로 하락</span><span class="chg n down">-0.58%</span></li>
+      <li><span class="day">9/9 (수)</span><span class="what">미 10년물 2023년 이후 최고. 세계가 밀리는데 코스피만 7,000선 회복</span><span class="chg n up">+1.40%</span></li>
+      <li><span class="day">9/10 (목)</span><span class="what">ECB 25bp 인상, WTI 100달러 돌파. 네 마녀의 날에 외국인 4조 매도에도 7,000선 사수</span><span class="chg n down">-0.25%</span></li>
+      <li class="today"><span class="day">9/11 (금)</span><span class="what">미 근원 CPI 예상 상회, 인상 확률 90%. 7,000선 반납. 뉴욕은 유가 후퇴에 반등</span><span class="chg n down">-1.76%</span></li>
+    </ul>
+    <p class="src-note">등락률은 코스피 종가 기준. 궤적의 점은 9월 8일부터 11일까지 나흘 종가. 이번 주 이야기의 출발점은 지난주 금요일(9월 4일) 미국 8월 고용지표였다. 주간 코스피는 6,995.39에서 6,909.91로 1.22% 하락.</p>
+  </section>
+
+  <section>
+    <h2>눈여겨볼 뉴스</h2>
+    <ol class="news">
+      <li>
+        <div>
+          <p class="head">미 8월 근원 CPI 0.3%로 예상 상회, 9월 인상 확률 90%</p>
+          <p class="why">헤드라인은 예상과 같았지만 근원이 한 단계 높았다. 다음 주 연준 결정이 사실상 인상으로 기울었고 블룸버그는 연내 두 번 인상 반영을 전했다.</p>
+          <p class="from"><a href="https://www.bls.gov/news.release/cpi.nr0.htm">미 노동통계국 CPI 발표</a> 및 <a href="https://www.cbsnews.com/news/fed-rate-hike-september-likelihood-cpi/">CBS News</a>, 2026년 9월 11일</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <p class="head">뉴욕 나흘 만에 반등, 유가 후퇴와 AI 인프라주가 견인</p>
+          <p class="why">WTI 2.4% 하락에 델과 HPE가 10% 안팎 오르며 나스닥을 끌었다. 주간으로는 다우존스가 3월 이후 최악.</p>
+          <p class="from"><a href="https://econcurrents.substack.com/p/11-september-2026-market-close-and">EconCurrents</a> 및 <a href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-sept-11-2026">TheStreet</a>, 2026년 9월 11일</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <p class="head">코스피 7,000선 반납, 외국인과 기관 4조 원 동반 매도</p>
+          <p class="why">미 금리 상승, 유가, 뉴욕 기술주 급락의 삼중고. 삼성전자 3.53% 하락. 국내는 뉴욕 반등 전에 마감했다.</p>
+          <p class="from"><a href="https://www.fnnews.com/news/202609111555122620">파이낸셜뉴스</a> 및 <a href="https://www.businesskorea.co.kr/news/articleView.html?idxno=276778">비즈니스코리아</a>, 2026년 9월 11일</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <p class="head">국고채 3년물 4% 돌파, 하루 9.1bp 상승</p>
+          <p class="why">미 2년물 급등이 국내 단기물로 전이됐다. 한국은행의 다음 행보에 시장이 미리 반응하는 모양이다.</p>
+          <p class="from">Investing.com 9월 11일 종가, 2026년 9월 12일 조회</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <p class="head">일본 8월 생산자물가 7.6%, 예상 상회</p>
+          <p class="why">예상치 7.4%를 넘었고 3년 반 만의 고점 부근이다. 일본은행 인상 기대를 뒷받침해 닛케이가 1.93% 내렸다.</p>
+          <p class="from"><a href="https://www.japantimes.co.jp/business/2026/09/11/economy/japan-producer-price-august/">Japan Times</a>, 2026년 9월 11일</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>다가오는 일정</h2>
+    <ul class="cal">
+      <li><span class="when">9/14 (월) 13:30</span><span>일본 7월 산업생산</span><span class="est na">-</span></li>
+      <li><span class="when">9/15 (화) 09:00</span><span>한국 8월 수출입, 무역수지</span><span class="est na">-</span></li>
+      <li><span class="when">9/15 (화) 11:00</span><span>중국 8월 산업생산, 소매판매, 실업률</span><span class="est na">-</span></li>
+      <li class="mark"><span class="when">9/15 ~ 16</span><span>미 연준 FOMC. 인상 확률 90%</span><span class="est na">-</span></li>
+      <li><span class="when">9/16 (수) 08:50</span><span>일본 8월 무역수지</span><span class="est na">-</span></li>
+      <li class="mark"><span class="when">9/17 (목) 03:00</span><span>연준 금리 결정과 파월 의장 회견</span><span class="est na">-</span></li>
+      <li><span class="when">9/16 (수)</span><span>ECB 인상 금리 발효</span><span class="est">예금 2.50%</span></li>
+    </ul>
+    <p class="src-note">시각은 모두 KST. 연준 결정 시각은 통상 발표 시각인 미 동부 오후 2시를 환산했다. 예상치는 조회 시점에 확인하지 못했다.</p>
+  </section>
+
+  <footer>
+    <div class="blk">
+      <h3>출처</h3>
+      <ul>
+        <li>파이낸셜뉴스 fn마감시황. 코스피 코스닥 종가, 투자자별 순매수, 업종별 등락. 2026-09-11 15:55</li>
+        <li>비즈니스코리아. 원/달러 종가, 삼성전자 SK하이닉스 등락, 하락 배경. 2026-09-11</li>
+        <li>한국면세뉴스. 외국인 순매수 대조 집계. 2026-09-11</li>
+        <li>Google Finance. 코스피 장중 시가와 저가. 2026-09-11 12:53 KST 조회</li>
+        <li>Yahoo Finance. 미국 지수와 아시아 지수 9월 11일 종가. 2026-09-12 조회</li>
+        <li>Investing.com. 국고채 3년물, 미 국채 2년물과 10년물, 달러인덱스, 경제 캘린더. 2026-09-12 조회</li>
+        <li>CNBC, CBS News, Bloomberg 검색 결과. 8월 CPI 수치와 연준 인상 확률. 2026-09-11</li>
+        <li>EconCurrents, TheStreet. 뉴욕 반등 배경과 주간 성과. 2026-09-11</li>
+        <li>USAGOLD 일간 리포트. 금 시세. 2026-09-11</li>
+        <li>Japan Times, Investing.com. 일본 8월 PPI. 2026-09-11</li>
+        <li>이 문서의 9월 8일, 9일, 10일자. 어제 값, 이번 주 궤적과 요약</li>
+      </ul>
+    </div>
+
+    <div class="blk">
+      <h3>확인하지 못한 항목</h3>
+      <ul>
+        <li class="gap">코스피 장중 저가의 정확한 값. 12시 53분 시점 저가 6,802.50만 확인했으며 이후 더 낮았을 수 있다.</li>
+        <li class="gap">연준 인상 확률의 어제 값 60% 안팎은 다른 출처 기준이라 오늘 값 90%와 직접 비교에는 한계가 있다. 같은 날 CNBC는 CPI 발표 전 70%로 적었다.</li>
+        <li class="gap">다음 주 지표의 시장 예상치. 캘린더에서 항목만 확인했다.</li>
+        <li class="gap">외국인 코스피 순매도가 매체 간 1,500억 원가량 어긋난다. 한국거래소 확정치 확인 필요.</li>
+      </ul>
+    </div>
+
+    <p class="fineprint">
+      공개된 자료를 정리한 개인용 기록입니다.
+      투자 권유나 매매 의견이 아니며, 수치에 오류가 있을 수 있습니다.
+      판단 전에 원출처를 확인하세요.
+    </p>
+  </footer>
+
+</div>
+</body>
+</html>
